@@ -2,6 +2,10 @@ source ~/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+
 zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
 zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
 zinit load zsh-users/zsh-completions # 補完2
@@ -13,6 +17,7 @@ zinit light sindresorhus/pure
 zinit light motemen/ghq
 zinit light junegunn/fzf
 zinit light mollifier/anyframe
+zinit light b4b4r07/enhancd
 
 autoload -U compinit
 compinit
@@ -24,7 +29,7 @@ zinit ice depth=1; zplugin light romkatv/powerlevel10k
 
 # Powerlevel9k
 POWERLEVEL9K_MODE='awesome-fontconfig'
-#source  ~/powerlevel9k/powerlevel9k.zsh-theme
+source  ~/powerlevel10k/powerlevel10k.zsh-theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv custom_wifi_signal status dir dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs vcs time date)
 POWERLEVEL9K_STATUS_VERBOSE=false
@@ -44,6 +49,15 @@ POWERLEVEL9K_DATE_FORMAT="%D{%d.%m}"
 
 # prompt
 PROMPT='%m:%c %n$ '
+
+autoload -Uz colors
+colors
+
+setopt share_history
+
+setopt correct
+setopt auto_cd
+
 # コマンド履歴
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
