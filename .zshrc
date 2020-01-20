@@ -111,3 +111,5 @@ alias drunit='docker container run --rm -it'
 alias dstop='docker container stop $(dcur)'
 
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
