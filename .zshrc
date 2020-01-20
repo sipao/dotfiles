@@ -7,7 +7,10 @@ zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色
 zinit load zsh-users/zsh-completions # 補完2
 
 zinit light zsh-users/zsh-autosuggestions
-zinit ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
 autoload -U compinit
 compinit
+
+zinit ice depth=1; zplugin light romkatv/powerlevel10k
