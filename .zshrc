@@ -7,3 +7,9 @@ autoload -Uz _zplugin
 zplugin load momo-lab/zsh-abbrev-alias # 略語を展開する
 zplugin load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
 zplugin load zsh-users/zsh-completions # 補完2
+
+zplugin light zsh-users/zsh-autosuggestions
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+
+autoload -U compinit
+compinit
