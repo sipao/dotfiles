@@ -9,6 +9,7 @@ brew "bat"
 brew "carthage"
 brew "cocoapods"
 brew "git"
+brew "diff-so-fancy"
 # brew "libimobiledevice", args: ["HEAD"]
 brew "nodebrew"
 brew "ruby-build"
