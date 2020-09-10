@@ -20,6 +20,11 @@ fi
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Alias
 
 alias cp="cp -v"
@@ -42,3 +47,7 @@ alias gl='git log --graph --date-order --all --date=format:'\''%m/%d %H:%M'\'' -
 alias gll='git log --oneline --decorate --graph'
 
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
