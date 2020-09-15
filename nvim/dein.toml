@@ -37,4 +37,10 @@ hook_add='''
 '''
 
 [[plugins]]
+repo = 'othree/html5.vim'
+
+[[plugins]]
 repo = 'wavded/vim-stylus'
+
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
