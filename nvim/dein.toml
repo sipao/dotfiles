@@ -35,3 +35,6 @@ hook_add='''
   nnoremap <silent> <space>ff :<C-u>Denite file_rec<CR>
   nnoremap <silent> <space>fu :<C-u>Denite outline<CR>
 '''
+
+[[plugins]]
+repo = 'wavded/vim-stylus'
