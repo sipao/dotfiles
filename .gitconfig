@@ -1,6 +1,6 @@
 [user]
-	name = d_shiba
-	email = dfqegwr@gmail.com
+	name = 
+	email = 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false
