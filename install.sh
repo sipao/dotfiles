@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+./font.sh
+
 git submodule update --init --recursive
 
 DIR=$(cd $(dirname $0); pwd)
