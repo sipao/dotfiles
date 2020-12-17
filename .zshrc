@@ -51,3 +51,6 @@ alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
