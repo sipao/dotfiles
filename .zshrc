@@ -24,8 +24,13 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# auto_ls_after_cd
+setopt auto_cd
+function chpwd() { ls }
 
+###########################################
 # Alias
+###########################################
 
 alias cp="cp -v"
 alias mv="mv -v"
@@ -52,10 +57,25 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+###########################################
+# Google Cloud SDK
+###########################################
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
+###########################################
+#zplug
+###########################################
+source ~/.zplug/init.zsh
 
-# auto_ls_after_cd
-setopt auto_cd
-function chpwd() { ls }
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+zplug "b4b4r07/enhancd", use:init.sh
+
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+# Then, source plugins and add commands to $PATH
+zplug load
