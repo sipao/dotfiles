@@ -66,9 +66,7 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/compl
 ###########################################
 #zplug
 ###########################################
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
-#source ~/.zplug/init.zsh
+source ~/.zplug/init.zsh
 
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "b4b4r07/enhancd", use:init.sh
