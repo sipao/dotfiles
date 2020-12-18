@@ -12,6 +12,9 @@ for rcfile in "~/dotfiles"/.zprezto/runcoms/^README.md(.N); do
   ln -s "~/${rcfile}" "~/dotfiles/.${rcfile:t}"
 done
 
+# install zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+
 brew bundle
 
 pyenv install 3.8.5
