@@ -28,3 +28,5 @@ cask "iterm2"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "docker"
+# sha256 checksumエラーでてた
+#cask "hyperswitch"
