@@ -5,7 +5,6 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
-
 set backspace=indent,eol,start
 
 set mouse=a
@@ -22,3 +21,8 @@ let NERDTreeShowHidden = 1
 
 " デフォルトでツリーを表示させる
 let g:nerdtree_tabs_open_on_console_startup=1
+"""""""""""""""""""""""""""""""""""""""""""
+" rcmdnk/vim-markdown
+" markdownを自動で折りたたまないようにする
+let g:vim_markdown_folding_disabled = 1
+
