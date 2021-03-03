@@ -21,7 +21,7 @@ fi
   eval "$(rbenv init -)"
 
 # For Docker
-export DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=0
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
