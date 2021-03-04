@@ -60,6 +60,15 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+
+###########################################
+# Kubernetes
+###########################################
+source <(kubectl completion zsh)
+alias k="kubectl"
+complete -o default -F __start_kubectl k
+
+
 ###########################################
 # Google Cloud SDK
 ###########################################
