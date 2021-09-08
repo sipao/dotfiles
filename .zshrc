@@ -73,8 +73,14 @@ complete -o default -F __start_kubectl k
 # Google Cloud SDK
 ###########################################
 
-#source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-#source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+
+###########################################
+## Flutter
+###########################################
+export PATH="$PATH:/Users/ds/flutter/bin"
 
 ###########################################
 #zplug
@@ -92,3 +98,22 @@ if ! zplug check --verbose; then
 fi
 # Then, source plugins and add commands to $PATH
 zplug load
+
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+
+
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+if [ -d "${ANDROID_HOME}" ]; then
+  export PATH="${ANDROID_HOME}/bin:$PATH"
+fi
+
+# Platform-Toolsのパスを通す
+export ANDROID_TOOL_PATH=${ANDROID_HOME}/platform-tools
+if [ -d "${ANDROID_TOOL_PATH}" ]; then
+  export PATH="${ANDROID_TOOL_PATH}:$PATH"
+fi
+
+source $HOME/.cargo/env
+
+eval "$(pyenv init -)"
