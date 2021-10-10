@@ -2,10 +2,10 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
-# tap "osx-cross/arm"
-# tap "osx-cross/avr"
-# tap "qmk/qmk"
+cask_args appdir: "/Applications"
+
 brew "rustup"
+brew "mas"
 brew "pyenv"
 brew "neovim"
 brew "bat"
@@ -13,7 +13,6 @@ brew "carthage"
 brew "cocoapods"
 brew "git"
 brew "diff-so-fancy"
-# brew "libimobiledevice", args: ["HEAD"]
 brew "nodebrew"
 brew "ruby-build"
 brew "rbenv"
@@ -22,14 +21,19 @@ brew "tree"
 brew "xcodegen"
 brew "pwgen"
 brew "jq"
-#brew "zplug"
-# dbrew "qmk/qmk/qmk"
+brew "kubectl", link: true
+
+cask "boostnote"
 cask "font-cica"
-# cask "wine-stable"
-# cask "xquartz"
+cask "gyazo"
+cask "karabiner-elements"
 cask "iterm2"
+cask "intellij-idea"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "docker"
-# sha256 checksumエラーでてた
-#cask "hyperswitch"
+cask "slack"
+
+mas "Skitch", id: 425955336
+mas "The Unarchiver", id: 425424353
+
