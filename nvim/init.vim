@@ -73,12 +73,15 @@ set inccommand=split
 " let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:python3_host_prog = substitute(system('which python3'),"\n","","")
 
+" Markdownの自動折り畳み無効
+let g:vim_markdown_folding_disabled=1
 
 
 " NERDTree -------------------------------------------------------------
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 " デフォルトでツリー表示
 autocmd VimEnter * NERDTree
+let g:nerdtree_tabs_oepn_on_console_startup=1
 " メインウィンドウへ移行
 autocmd VimEnter * wincmd p
 " 隠しファイルを表示
