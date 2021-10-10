@@ -1,29 +1,27 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
+###########################################
+# shell
+###########################################
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# rbenv
+###########################################
+# Ruby
+###########################################
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-# For Docker
+###########################################
+# Docker
+###########################################
 export DOCKER_CONTENT_TRUST=0
 
-# pyenv
+###########################################
+# Python
+###########################################
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -34,32 +32,18 @@ function chpwd() { ls }
 ###########################################
 # Alias
 ###########################################
-
 alias cp="cp -v"
 alias mv="mv -v"
-
-
 alias lsa="ls -la"
 alias ls="ls -GF"
-
 alias cat="bat"
-
-# alias g='git'
-# alias gc='git commit --verbose'
-# alias gco='git checkout'
-# alias gmF='git merge --no-ff'
-
 alias ga='git add'
-
 alias gl='git log --graph --date-order --all --date=format:'\''%m/%d %H:%M'\'' --pretty=format:'\''%C(cyan)%h %C(yellow)%cn %Creset%cd%Cred%d%n%B'\'
 alias gll='git log --oneline --decorate --graph'
-
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
-
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-
 alias decode_unicode='sed -e '\''s/\\u\(....\)/\&#x\1;/g'\'' | nkf --numchar-input'
 
 ###########################################
@@ -69,14 +53,11 @@ source <(kubectl completion zsh)
 alias k="kubectl"
 complete -o default -F __start_kubectl k
 
-
 ###########################################
 # Google Cloud SDK
 ###########################################
-
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
 
 ###########################################
 ## Flutter
@@ -84,7 +65,7 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/compl
 export PATH="$PATH:/Users/ds/flutter/bin"
 
 ###########################################
-#zplug
+# zplug
 ###########################################
 source ~/.zplug/init.zsh
 
@@ -115,6 +96,7 @@ if [ -d "${ANDROID_TOOL_PATH}" ]; then
   export PATH="${ANDROID_TOOL_PATH}:$PATH"
 fi
 
+###########################################
+# Rust
+###########################################
 source $HOME/.cargo/env
-
-eval "$(pyenv init -)"
