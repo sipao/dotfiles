@@ -23,6 +23,12 @@ pip3 install --user --upgrade neovim
 
 rustup-init
 
+git clone https://github.com/Kethku/neovide
+
+cd neovide && cargo build --release
+
+ln -sf /~dotfiles/neovide /usr/local/bin/neovide
+
 # symlink dotfiles
 ln -sf ~/dotfiles/.zprezto ~/.zprezto
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
@@ -32,7 +38,7 @@ ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 mkdir ~/.config/nvim
-ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim 
+ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 # Neovim dein
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
