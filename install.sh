@@ -11,23 +11,19 @@ for rcfile in "~/dotfiles"/.zprezto/runcoms/^README.md(.N); do
   ln -s "~/${rcfile}" "~/dotfiles/.${rcfile:t}"
 done
 
-# install zplug
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+# Zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 brew bundle
 
+# Python
 pyenv install 3.8.5
 pyenv global 3.8.5
 
 pip3 install --user --upgrade neovim
 
+# Rust
 rustup-init
-
-git clone https://github.com/Kethku/neovide
-
-cd neovide && cargo build --release
-
-ln -sf /~dotfiles/neovide /usr/local/bin/neovide
 
 # symlink dotfiles
 ln -sf ~/dotfiles/.zprezto ~/.zprezto
