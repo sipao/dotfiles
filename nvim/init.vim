@@ -110,6 +110,8 @@ call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('vue',    'Green',   'none', '#4fc08d', '#4fc08d')
+call NERDTreeHighlightFile('swift',  'Green',   'none', '#4fc08d', '#4fc08d')
+call NERDTreeHighlightFile('go',     'blue',    'none', '#4fc08d', '#4fc08d')
 "End NERDTree -------------------------------------------------------------
 
 "rcmdnk/vim-markdown Start------------------------------------------------------
