@@ -7,6 +7,7 @@ cask_args appdir: "/Applications"
 
 brew "bat"
 brew "carthage"
+brew "cmake"
 brew "cocoapods"
 brew "diff-so-fancy"
 brew "git"
