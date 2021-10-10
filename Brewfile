@@ -10,7 +10,6 @@ brew "carthage"
 brew "cmake"
 brew "cocoapods"
 brew "diff-so-fancy"
-brew "git"
 brew "go"
 brew "jq"
 brew "kubectl", link: true
