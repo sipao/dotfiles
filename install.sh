@@ -22,9 +22,6 @@ pyenv global 3.8.5
 
 pip3 install --user --upgrade neovim
 
-# Rust
-rustup-init
-
 # symlink dotfiles
 ln -sf ~/dotfiles/.zprezto ~/.zprezto
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
