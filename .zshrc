@@ -60,6 +60,7 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+alias decode_unicode='sed -e '\''s/\\u\(....\)/\&#x\1;/g'\'' | nkf --numchar-input'
 
 ###########################################
 # Kubernetes
