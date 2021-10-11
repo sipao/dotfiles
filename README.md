@@ -7,7 +7,13 @@ zsh ~/dotfiles/install.sh
 ```
 
 
+# Memo
+
+- vimf
+ - 検索してVimで開きたいとき
+
 # TODO
 - tmux
 - tig
 - ghq
+- coc.nvim

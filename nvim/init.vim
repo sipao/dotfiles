@@ -72,12 +72,13 @@ set inccommand=split
 " python3 for neovim
 " let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 let g:python3_host_prog = substitute(system('which python3'),"\n","","")
+" 改行時にコメント開始文字列の自動挿入無効化
+au FileType * setlocal formatoptions-=r
+au FileType * setlocal formatoptions-=o
 
-" Markdownの自動折り畳み無効
-let g:vim_markdown_folding_disabled=1
-
-
-" NERDTree -------------------------------------------------------------
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 " デフォルトでツリー表示
 autocmd VimEnter * NERDTree
@@ -115,6 +116,23 @@ call NERDTreeHighlightFile('go',     'blue',    'none', '#4fc08d', '#4fc08d')
 "End NERDTree -------------------------------------------------------------
 
 "rcmdnk/vim-markdown Start------------------------------------------------------
-let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
+" Markdownの自動折り畳み無効
+let g:vim_markdown_folding_disabled=1
 "rcmdnk/vim-markdown End------------------------------------------------------
+
+
+
+
+
+
+nnoremap <silent> <Leader>g :<C-u>silent call <SID>find_rip_grep()<CR>
+
+function! s:find_rip_grep() abort
+    call fzf#vim#grep(
+                \   'rg --ignore-file ~/.ignore --column --line-number --no-heading --hidden --smart-case .+',
+                \   1,
+                \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+                \   0,
+                \ )
+endfunction

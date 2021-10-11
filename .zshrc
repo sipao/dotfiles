@@ -44,6 +44,7 @@ alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias vimf='vim $(fzf)'
 alias decode_unicode='sed -e '\''s/\\u\(....\)/\&#x\1;/g'\'' | nkf --numchar-input'
 
 ###########################################
