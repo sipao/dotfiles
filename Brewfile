@@ -13,6 +13,7 @@ brew "diff-so-fancy"
 brew "go"
 brew "jq"
 brew "kubectl", link: true
+brew "luajit"
 brew "mas"
 brew "neovim"
 brew "nodebrew"
