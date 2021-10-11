@@ -13,6 +13,7 @@ if dein#load_state('~/.cache/dein')
   " Let dein manage dein
   " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
 
   let s:toml_dir = expand('~/dotfiles/nvim')
 
@@ -121,11 +122,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_folding_disabled=1
 "rcmdnk/vim-markdown End------------------------------------------------------
 
-
-
-
-
-
 nnoremap <silent> <Leader>g :<C-u>silent call <SID>find_rip_grep()<CR>
 
 function! s:find_rip_grep() abort
@@ -136,3 +132,12 @@ function! s:find_rip_grep() abort
                 \   0,
                 \ )
 endfunction
+
+" Treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  }
+}
+EOF
