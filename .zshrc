@@ -18,11 +18,11 @@ fi
 # Docker
 ###########################################
 export DOCKER_CONTENT_TRUST=0
-alias dc='docker-compose'
-alias dcu='docker-compose up -d'
-alias dcd='docker-compose down'
-alias dcr='docker-compose restart'
-alias dcl='docker-compose logs'
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcr='docker compose restart'
+alias dcl='docker compose logs'
 alias dp='docker ps'
 alias dx='docker exec -it'
 
