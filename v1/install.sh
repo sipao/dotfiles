@@ -14,7 +14,7 @@ done
 # Zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
-brew bundle
+#brew bundle
 
 # Python
 pyenv install 3.8.5

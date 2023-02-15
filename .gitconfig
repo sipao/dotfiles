@@ -1,6 +1,8 @@
 [user]
-	name = 
-	email = 
+	name = d_shiba
+	email = dfqegwr@gmail.com
+[includeIf "gitdir:~/pj/bxd/"]
+    path = ~/pj/bxd/.gitconfig
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false

@@ -52,7 +52,7 @@ alias decode_unicode='sed -e '\''s/\\u\(....\)/\&#x\1;/g'\'' | nkf --numchar-inp
 ###########################################
 source <(kubectl completion zsh)
 alias k="kubectl"
-complete -o default -F __start_kubectl k
+#complete -o default -F __start_kubectl k
 
 ###########################################
 # Google Cloud SDK
@@ -82,8 +82,12 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+#export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+#export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
 
 
 export ANDROID_HOME=${HOME}/Library/Android/sdk
@@ -100,4 +104,13 @@ fi
 ###########################################
 # Rust
 ###########################################
-#source $HOME/.cargo/env
+source $HOME/.cargo/env
+GITSTATUS_LOG_LEVEL=DEBUG
+
+
+#export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+#
+#JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+#
+#export JAVA_HOME=$JAVA_11_HOME
+#export PATH="$JAVA_HOME/bin:$PATH"
