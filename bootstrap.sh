@@ -25,10 +25,13 @@ ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 #brew tap homebrew/bundle
 #brew bundle --file ./Brewfile
 
-# Install NvChad
-#rm -rf ~/.config/nvim/
-#mkdir -p ~/.config/nvim/
-git submodule add -b main https://github.com/NvChad/NvChad .config/nvim
-mkdir -p nvchad/custom
-ln -sf ~/dotfiles/nvchad/custom .config/nvim/lua/
+# Install Nerd Fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install.sh
+
+# Install AstroNvim
+rm -rf ~/.config/nvim
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
 
