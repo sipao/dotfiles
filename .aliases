@@ -37,7 +37,7 @@ alias gll='git log --oneline --decorate --graph'
 alias gmF='git merge --no-ff'
 
 # Git Push
-alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gpc='git push --set-upstream origin "$(git branch --show-current)"'
 
 # Git Working Copy
 alias gws='git status --short'
