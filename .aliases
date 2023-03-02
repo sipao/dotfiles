@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Recursively remove .DS_Store files
+alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
+
+# ls
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
+
+# Git
+alias g='git'
+
+# Git Branch
+alias gb='git branch'
+
+# Git Commit
+alias gc='git commit --verbose'
+
+# Git Fetch
+alias gfa='git fetch --all'
+alias gfm='git pull'
+
+# Git Index
+alias ga='git add'
+
+# Git Log
+alias gl='git log --graph --date-order --all --date=format:'\''%m/%d %H:%M'\'' --pretty=format:'\''%C(cyan)%h %C(yellow)%cn %Creset%cd%Cred%d%n%B'\'
+alias gll='git log --oneline --decorate --graph'
+
+# Git Merge
+alias gmF='git merge --no-ff'
+
+# Git Push
+alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+
+# Git Working Copy
+alias gws='git status --short'
