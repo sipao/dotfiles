@@ -22,7 +22,8 @@ cask "font-cica"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "intellij-idea"
+cask "iterm2"
 cask "karabiner-elements"
 cask "slack"
-cask "warp"
+# cask "warp" いまいち使い勝手がよくなかったので保留
 
