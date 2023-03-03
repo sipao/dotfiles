@@ -16,6 +16,7 @@ brew "jq"
 brew "kubectl"
 brew "neovim"
 brew "nodeenv"
+brew "nyancat"
 brew "pyenv"
 brew "tree"
 
