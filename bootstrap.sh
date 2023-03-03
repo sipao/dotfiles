@@ -17,23 +17,40 @@ source ~/.zshrc
 # symlinks
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 
-echo "install from Brewfile? (y/N): "
-
+echo "Install from Brewfile? (y/N): "
 if read -q; then
   # Update Homebrew recipes
   brew update
-
   # Install all our dependencies with bundle (See Brewfile)
   brew tap homebrew/bundle
   brew bundle --file ./Brewfile
 fi
 
-# Install AstroNvim
-rm -rf ~/.config/nvim
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
+echo "Install Starship? (y/N): "
+if read -q; then
+  # Install starship
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+#  echo eval "$(starship init zsh)" >> ~/.zshrc
+  ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
+fi
 
-# iTerm2
+echo "Install AstroNvim? (y/N): "
+if read -q; then
+  # Install AstroNvim
+  rm -rf ~/.config/nvim
+  git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
+fi
+
+# Setting iTerm2
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+echo "Install GoogleCloudSDK? (y/N): "
+if read -q; then
+  brew install --cask google-cloud-sdk
+fi
+
+
+source ~/.zshrc
 

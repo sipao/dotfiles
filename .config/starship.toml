@@ -1,0 +1,42 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+scan_timeout = 10
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user 🌱 ]($style) "
+disabled = false
+show_always = true
+
+[character]
+success_symbol = "[▶](bold green)" # コマンド成功時
+error_symbol = "[▶](bold red)"    # コマンド失敗時[character]
+vicmd_symbol = "[🍌 ](bold green)"
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[git_branch]
+symbol = " "
+
+[[battery.display]]
+#バッテリーを表示するタイミング、表示する際の文字のスタイル
+threshold = 100
+style = "bold blue"
+
+[time]
+disabled = false
+#format = '🕙[\[ $time \]]($style) '
+#time_format = '%T'
+#utc_time_offset = '-5'
+#time_range = '10:00:00-14:00:00'

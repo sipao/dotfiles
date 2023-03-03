@@ -12,18 +12,22 @@ can start from small setup.
 ### Terminal
 - Terminal emulator: Warp
 - Shell: zsh
-- Prompt:
+- Prompt: Starship
 
-## Warp
-warp cheat sheet.
+## Starship
+Starship-Setting is .config/starship.toml.
+
+## Others
+- [exa](https://github.com/ogham/exa)
 
 ## Considering
-- [Starship](https://starship.rs/ja-jp/)
 - Eucalyn
 - Dactyl manuform
 - [DiffView](https://github.com/sindrets/diffview.nvim)
+- Lazydocker
 
 ## Futures
+- tmux
 - Raycast
 - https://github.com/nvim-telescope/telescope.nvim
 - https://qiita.com/notakaos/items/701fad47605e586af268
