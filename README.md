@@ -24,8 +24,6 @@ Starship-Setting is .config/starship.toml.
 - [exa](https://github.com/ogham/exa)
 
 ## Considering
-- cd movement shotcut
-- zsh補完
 - Eucalyn
 - Dactyl manuform
 - [DiffView](https://github.com/sindrets/diffview.nvim)
@@ -45,8 +43,13 @@ Starship-Setting is .config/starship.toml.
 ## Zsh Plugins
 
 ### asdf
-- asdf --help
-- asdf plugin-list-all
+- `asdf --help`
+- `asdf plugin list all`
 
 ### Git prune
-- gprune [ -r | --remote | -b | --both ] <branch-name>
+- `gprune [ -r | --remote | -b | --both ] <branch-name>`
+
+### Fig
+- `fig`
+- 設定 -> プライバシーとセキュリティ -> アクセシビリティ -> Fig
+
