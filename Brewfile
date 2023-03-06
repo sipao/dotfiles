@@ -18,6 +18,7 @@ brew "neovim"
 brew "nodeenv"
 brew "nyancat"
 brew "pyenv"
+brew "sheldon"
 brew "tree"
 
 cask "docker"

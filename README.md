@@ -21,6 +21,9 @@ Starship-Setting is .config/starship.toml.
 - [exa](https://github.com/ogham/exa)
 
 ## Considering
+- cd movement shotcut
+- zsh補完
+- tig
 - Eucalyn
 - Dactyl manuform
 - [DiffView](https://github.com/sindrets/diffview.nvim)
