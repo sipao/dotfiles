@@ -5,13 +5,16 @@ can start from small setup.
 ------
 
 ### Keyboard
+
 ### General
+
 ### Editor
 - AstroNvim
 
 ### Terminal
 - Terminal emulator: Warp
 - Shell: zsh
+- Plugin manager: sheldon
 - Prompt: Starship
 
 ## Starship
@@ -23,7 +26,6 @@ Starship-Setting is .config/starship.toml.
 ## Considering
 - cd movement shotcut
 - zsh補完
-- tig
 - Eucalyn
 - Dactyl manuform
 - [DiffView](https://github.com/sindrets/diffview.nvim)
@@ -39,3 +41,12 @@ Starship-Setting is .config/starship.toml.
 - [driesvints/dotfiles](https://github.com/driesvints/dotfiles)
 - [driesvints/dotfiles](https://github.com/driesvints/dotfiles)
 - https://github.com/julianschuler/dotfiles
+
+## Zsh Plugins
+
+### asdf
+- asdf --help
+- asdf plugin-list-all
+
+### Git prune
+- gprune [ -r | --remote | -b | --both ] <branch-name>

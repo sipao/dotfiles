@@ -14,6 +14,9 @@ rm -rf ~/.zshrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 
+# Zsh sheldon
+ln -sf ~/dotfiles/.config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
+
 # symlinks
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 
