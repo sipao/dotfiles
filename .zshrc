@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # sources
 source ~/dotfiles/.aliases
 source ~/dotfiles/.exports
@@ -31,3 +33,13 @@ setopt AUTO_PARAM_KEYS
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Run ls after cd
+chpwd() {
+	if [[ $(pwd) != $HOME ]]; then;
+		ls
+	fi
+}
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

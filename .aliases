@@ -16,9 +16,11 @@ alias g='git'
 
 # Git Branch
 alias gb='git branch'
+alias gbD='git branch --delete --force'
 
 # Git Commit
 alias gc='git commit --verbose'
+alias gco='git checkout'
 
 # Git Fetch
 alias gfa='git fetch --all'
