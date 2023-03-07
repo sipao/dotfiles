@@ -5,6 +5,7 @@ tap "homebrew/core"
 
 cask_args appdir: "/Applications"
 
+brew "asdf"
 brew "bat"
 brew "cmake"
 brew "diff-so-fancy"
