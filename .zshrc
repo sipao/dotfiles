@@ -15,10 +15,11 @@ source <(kubectl completion zsh)
 eval "$(sheldon source)"
 
 # 履歴保存管理
-HISTFILE=$ZDOTDIR/.zsh-history
-HISTSIZE=100000
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
 SAVEHIST=1000000
 setopt hist_ignore_dups
+setopt hist_ignore_space
 
 # config of zsh-autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions#configuration
@@ -31,9 +32,6 @@ setopt AUTO_CD
 # 環境変数を補完
 setopt AUTO_PARAM_KEYS
 
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # Run ls after cd
 chpwd() {
 	if [[ $(pwd) != $HOME ]]; then;
@@ -43,3 +41,15 @@ chpwd() {
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Poetry
+export PATH="~/.local/bin:$PATH"
+
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+# for gke-cloud-auth-plugin
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+source ~/google-cloud-sdk/path.zsh.inc
+
+# homebrew git

@@ -23,6 +23,7 @@ brew "nyancat"
 brew "pyenv"
 brew "sheldon"
 brew "tree"
+brew "yq"
 
 cask "docker"
 cask "font-cica"
