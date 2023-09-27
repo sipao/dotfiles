@@ -1,5 +1,9 @@
 # [WIP]Sipao dotfiles v2
-can start from small setup.
+
+## Installation
+1. `./bootstrap.sh`
+1. Open fig , and follow...
+
 
 ## General setup
 ------

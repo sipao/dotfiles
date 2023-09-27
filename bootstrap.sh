@@ -1,7 +1,53 @@
 #!/bin/zsh
-echo "Setting up your Mac..."
+echo -e "\U1F300 Setting up your Mac..."
 
-# Check for Homebrew and install if we don't have it
+##########################################################
+## symlinks
+##########################################################
+echo -e "\U2757 Re-install dotfiles?(y/N): "
+if read -qs; then
+  # .zshrc
+  rm -rf ~/.zshrc
+  ln -sf ~/dotfiles/.zshrc ~/.zshrc
+  # gitconfig
+  rm -rf ~/.gitconfig
+  ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+fi
+
+##########################################################
+## macos
+##########################################################
+echo -e "\U1F34E Setup .macos? (y/N): "
+if read -qs; then
+  ./.macos
+fi
+
+##########################################################
+## iTerm2
+##########################################################
+# Setting iTerm2
+echo -e "\U1F371 Setting iTerm2...."
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+##########################################################
+# Zsh sheldon
+##########################################################
+echo -e "\U1F50C Install sheldon? (y/N): "
+if read -qs; then
+  DIR_SHELDON=~/.config/sheldon/
+  if [ ! -d "$DIR_SHELDON" ]; then
+    mkdir -p "$DIR_SHELDON"
+    echo "Directory '$DIR_SHELDON' created."
+  fi
+fi
+
+ln -sf ~/dotfiles/.config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
+
+##########################################################
+## homebrew
+##########################################################
+#  Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -9,51 +55,38 @@ if test ! $(which brew); then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Zsh
-rm -rf ~/.zshrc
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-source ~/.zshrc
-
-# Zsh sheldon
-ln -sf ~/dotfiles/.config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
-
-# symlinks
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-
-echo "Install from Brewfile? (y/N): "
-if read -q; then
-  # Update Homebrew recipes
+echo -e "\U1F34E Update brew? (y/N): "
+if read -qs; then
   brew update
-  # Install all our dependencies with bundle (See Brewfile)
-  brew tap homebrew/bundle
+fi
+
+echo -e "\U1F34F Install from Brewfile? (y/N): "
+if read -qs; then
   brew bundle --file ./Brewfile
 fi
 
-echo "Install Starship? (y/N): "
-if read -q; then
-  # Install starship
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+##########################################################
+## starship
+##########################################################
+#echo "Install Starship? (y/N): "
+#if read -qs; then
+#  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 #  echo eval "$(starship init zsh)" >> ~/.zshrc
-  ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
-fi
+#  ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
+#fi
 
-echo "Install AstroNvim? (y/N): "
-if read -q; then
-  # Install AstroNvim
+##########################################################
+## AstroNvim
+##########################################################
+echo -e "\U1F47E Install AstroNvim? (y/N): "
+if read -qs; then
   rm -rf ~/.config/nvim
-  git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-  ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
+  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  # ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
 fi
 
-# Setting iTerm2
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-echo "Install GoogleCloudSDK? (y/N): "
-if read -q; then
-  brew install --cask google-cloud-sdk
-fi
-
-
+##########################################################
+## Fin
+##########################################################
 source ~/.zshrc
 

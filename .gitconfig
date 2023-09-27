@@ -1,7 +1,7 @@
 [user]
 	name = d_shiba
 	email = dfqegwr@gmail.com
-[includeIf "gitdir:~/pj/bxd/"]
+[includeIf "gitdir:~/pj/bnx/"]
     path = ~/pj/bxd/.gitconfig
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -27,3 +27,4 @@
     ff = false
 [pull]
     ff = only
+

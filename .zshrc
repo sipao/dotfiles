@@ -5,7 +5,7 @@ source ~/dotfiles/.aliases
 source ~/dotfiles/.exports
 
 # Starship
-eval source <(/usr/local/bin/starship init zsh --print-full-init)
+eval "$(starship init zsh)"
 
 autoload -Uz compinit && compinit
 
@@ -39,17 +39,19 @@ chpwd() {
 	fi
 }
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # Poetry
 export PATH="~/.local/bin:$PATH"
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+. "$(brew --prefix asdf)/libexec/asdf.sh"
 
 # for gke-cloud-auth-plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-source ~/google-cloud-sdk/path.zsh.inc
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # homebrew git
+export PATH="$(brew --prefix git)/bin/git:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
