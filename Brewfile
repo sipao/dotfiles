@@ -5,6 +5,22 @@ tap "homebrew/core"
 
 cask_args appdir: "/Applications"
 
+##################
+# zsh
+##################
+brew "sheldon"
+brew "starship"
+
+##################
+# shell utils
+##################
+cask "fig"
+cask "iterm2"
+# cask "warp"
+
+##################
+# cui tools
+##################
 brew "asdf"
 brew "bat"
 brew "cmake"
@@ -17,29 +33,43 @@ brew "jq"
 brew "kubectl"
 brew "neovim"
 brew "nmap"
-brew "nodeenv"
-brew "nyancat"
-brew "sheldon"
-brew "starship"
 brew "tree"
 brew "yq"
 
-cask "fig"
+##################
+# fonts
+##################
 cask "font-cica"
 cask "font-hackgen-nerd"
 cask "font-Hack-nerd-font"
+
+##################
+# IDEs
+##################
+cask "webstorm"
+cask "pycharm"
+
+##################
+# container
+##################
+brew "colima"
+brew "docker"
+brew "docker-compose"
+
+##################
+# GCP
+##################
 cask "google-cloud-sdk"
+
+##################
+# Utils
+##################
 cask "google-chrome"
 cask "google-japanese-ime"
-cask "iterm2"
 cask "karabiner-elements"
 cask "notion"
-cask "pycharm"
 cask "skitch"
 cask "slack"
 cask "spectacle"
 cask "the-unarchiver"
-# cask "warp" いまいち使い勝手がよくなかったので保留
-cask "webstorm"
-
 

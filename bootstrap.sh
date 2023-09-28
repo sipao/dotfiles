@@ -81,12 +81,15 @@ fi
 echo -e "\U1F47E Install AstroNvim? (y/N): "
 if read -qs; then
   rm -rf ~/.config/nvim
-  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+  git clone --depth 1 https://github.com/astronvim/astronvim ~/.config/nvim
   # ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
 fi
 
 ##########################################################
-## Fin
+## fin
 ##########################################################
+
+echo -e "\U1F638 Dont forgot to install runcat"
+
 source ~/.zshrc
 
