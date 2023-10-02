@@ -46,15 +46,18 @@ cask "font-Hack-nerd-font"
 ##################
 # IDEs
 ##################
-cask "webstorm"
 cask "pycharm"
+cask "webstorm"
+
+##################
+# IDEs
+##################
+cask "sequel-ace"
 
 ##################
 # container
 ##################
-brew "colima"
-brew "docker"
-brew "docker-compose"
+cask "docker"
 
 ##################
 # GCP
