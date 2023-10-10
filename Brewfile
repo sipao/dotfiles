@@ -30,7 +30,6 @@ brew "fzf"
 brew "git"
 brew "gitui"
 brew "jq"
-brew "kubectl"
 brew "neovim"
 brew "nmap"
 brew "tree"
@@ -58,6 +57,8 @@ cask "sequel-ace"
 # container
 ##################
 cask "docker"
+brew "kubectx"
+brew "kubectl"
 
 ##################
 # GCP
