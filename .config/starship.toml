@@ -56,7 +56,6 @@ unknown_symbol = "❓ "
 empty_symbol = "🧟 "
 disabled = false
 format = "[ $symbol$percentage ]($style)"
-style = "bg:#06969A"
 
 [[battery.display]]
 threshold = 100
