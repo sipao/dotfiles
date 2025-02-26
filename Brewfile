@@ -10,6 +10,7 @@ cask_args appdir: "/Applications"
 ##################
 brew "sheldon"
 brew "starship"
+brew "fastfetch"
 
 ##################
 # shell utils

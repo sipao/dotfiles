@@ -50,3 +50,5 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # homebrew git
 export PATH="$(brew --prefix git)/bin/git:$PATH"
+
+fastfetch
