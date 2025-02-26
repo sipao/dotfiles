@@ -30,6 +30,8 @@ Host github_hoge
  ```
 上記の例だと、`g clone ssh://github_hoge.com/fuga/piyo.git`の様にホスト部分で切り替えることができる。
 
+### The fuck
+https://github.com/nvbn/thefuck
 
 ### Zsh Plugins
 `.config/sheldon/plugins.toml`
