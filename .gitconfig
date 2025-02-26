@@ -3,6 +3,8 @@
 	email = dfqegwr@gmail.com
 [includeIf "gitdir:~/pj/bnx/"]
     path = ~/pj/bnx/.gitconfig
+[includeIf "gitdir:~/pj/cloudfit/"]
+    path = ~/pj/cloudfit/.gitconfig
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	quotepath = false

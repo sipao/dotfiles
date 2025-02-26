@@ -25,8 +25,11 @@ apply = ["source"]
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 
-[plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit'
+#[plugins.compinit]
+#inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.colors]
+inline = 'autoload -Uz colors && zsh-defer colors'
 
 [plugins.enhancd]
 github = "b4b4r07/enhancd"

@@ -81,8 +81,10 @@ fi
 echo -e "\U1F47E Install AstroNvim? (y/N): "
 if read -qs; then
   rm -rf ~/.config/nvim
-  git clone --depth 1 https://github.com/astronvim/astronvim ~/.config/nvim
-  # ln -sf ~/dotfiles/.config/nvim/lua/user/ ~/.config/nvim/lua/user
+
+  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+  # remove template's git connection to set up your own later
+  rm -rf ~/.config/nvim/.git
 fi
 
 ##########################################################

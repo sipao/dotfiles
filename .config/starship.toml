@@ -30,13 +30,12 @@ format = "via [🐋 $context](blue bold)"
 symbol = " "
 
 [[battery.display]]
-#バッテリーを表示するタイミング、表示する際の文字のスタイル
 threshold = 100
 style = "bold blue"
 
 [time]
 disabled = false
-#format = '🕙[\[ $time \]]($style) '
+format = '[ $time ]($style) '
 #time_format = '%T'
 #utc_time_offset = '-5'
 #time_range = '10:00:00-14:00:00'

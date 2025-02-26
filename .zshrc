@@ -1,15 +1,13 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # sources
 source ~/dotfiles/.aliases
 source ~/dotfiles/.exports
 
-# Starship
-eval "$(starship init zsh)"
-
 autoload -Uz compinit && compinit
 
 source <(kubectl completion zsh)
+
+# Starship
+eval "$(starship init zsh)"
 
 # Sheldon
 eval "$(sheldon source)"
@@ -20,6 +18,8 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 setopt hist_ignore_dups
 setopt hist_ignore_space
+# setopt share_history # 複数ターミナルでヒストリの共有
+
 
 # config of zsh-autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions#configuration
@@ -39,19 +39,14 @@ chpwd() {
 	fi
 }
 
-# Poetry
-export PATH="~/.local/bin:$PATH"
 
 # asdf
-. "$(brew --prefix asdf)/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# for gke-cloud-auth-plugin
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# # for gke-cloud-auth-plugin
+# export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+# source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+# source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # homebrew git
 export PATH="$(brew --prefix git)/bin/git:$PATH"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

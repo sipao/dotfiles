@@ -14,7 +14,6 @@ brew "starship"
 ##################
 # shell utils
 ##################
-cask "fig"
 cask "iterm2"
 # cask "warp"
 
@@ -25,7 +24,7 @@ brew "asdf"
 brew "bat"
 brew "cmake"
 brew "diff-so-fancy"
-brew "exa"
+brew "eza"
 brew "fzf"
 brew "git"
 brew "gitui"
