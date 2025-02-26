@@ -11,6 +11,7 @@ cask_args appdir: "/Applications"
 brew "sheldon"
 brew "starship"
 brew "fastfetch"
+brew "thefuck"
 
 ##################
 # shell utils
@@ -49,7 +50,7 @@ cask "pycharm"
 cask "webstorm"
 
 ##################
-# IDEs
+# Database
 ##################
 cask "sequel-ace"
 

@@ -59,7 +59,3 @@ apply = ['defer']
 [plugins.zsh-you-should-use]
 github = "MichaelAquilina/zsh-you-should-use"
 apply = ['defer']
-
-[plugins.thefuck]
-github = "nvbn/thefuck"
-apply = ['defer']
