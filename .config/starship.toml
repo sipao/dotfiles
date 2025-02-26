@@ -6,12 +6,17 @@ add_newline = true
 
 scan_timeout = 10
 
+format = """
+[](#9A348E)$username$os$hostname$localip[](fg:#9A348E bg:#DA627D)$memory_usage[](fg:#DA627D bg:#FCA17D)$time[](fg:#FCA17D bg:#06969A)$battery[](fg:#06969A bg:#33658A)$directory[](fg:#33658A bg:#86BBD8)$cmd_duration[ ](fg:#86BBD8)\
+$shell$shlvl$singularity$kubernetes$vcsh$fossil_branch$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$bun$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$gradle$haskell$haxe$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$vlang$vagrant$zig$buf$guix_shell$nix_shell$conda$meson$spack$aws$gcloud$openstack$azure$direnv$env_var$crystal$custom$sudo$line_break$jobs$status$container$character
+"""
+
 [username]
-style_user = "white bold"
-style_root = "black bold"
-format = "[$user 🌱 ]($style) "
-disabled = false
+format = "[$user ]($style)"
+style_root = "bg:#9A348E"
+style_user = "bg:#9A348E"
 show_always = true
+disabled = false
 
 [character]
 success_symbol = "[▶](bold green)" # コマンド成功時
@@ -19,9 +24,19 @@ error_symbol = "[▶](bold red)"    # コマンド失敗時[character]
 vicmd_symbol = "[🍌 ](bold green)"
 
 [directory]
-truncation_length = 100
-truncate_to_repo = false
+truncation_length = 3
+truncate_to_repo = true
+fish_style_pwd_dir_length = 0
+use_logical_path = true
+format = "[ 📁 $path ]($style)[$read_only]($read_only_style)"
+repo_root_format = "[ $before_root_path ]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
+style = "bg:#33658A"
+disabled = false
+read_only = "🔒"
+read_only_style = "red"
 truncation_symbol = "…/"
+home_symbol = "~"
+use_os_path_sep = true
 
 [docker_context]
 format = "via [🐋 $context](blue bold)"
@@ -29,13 +44,45 @@ format = "via [🐋 $context](blue bold)"
 [git_branch]
 symbol = " "
 
+[git_status]
+style = "fg:blue"
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+#discharging_symbol = "🪫"
+unknown_symbol = "❓ "
+empty_symbol = "🧟 "
+disabled = false
+format = "[ $symbol$percentage ]($style)"
+style = "bg:#06969A"
+
 [[battery.display]]
 threshold = 100
-style = "bold blue"
+style = "bg:#06969A"
 
 [time]
 disabled = false
-format = '[ $time ]($style) '
+format = '[ $time ]($style)'
+style = "fg:#191970 bg:#FCA17D"
 #time_format = '%T'
 #utc_time_offset = '-5'
 #time_range = '10:00:00-14:00:00'
+
+
+[memory_usage]
+threshold = -1
+format = "[$symbol$ram_pct ]($style)"
+style = "bg:#DA627D"
+symbol = "🧛 "
+disabled = false
+
+[cmd_duration]
+min_time = 2000
+format = "[ 🐢 $duration ]($style)"
+style = "fg:#BD405C bold bg:#86BBD8"
+show_milliseconds = false
+disabled = false
+show_notifications = false
+min_time_to_notify = 5000
