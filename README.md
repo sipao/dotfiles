@@ -44,6 +44,20 @@ nodeやpython等、大体のものはこれをつかって管理する
 - `gprune` (`gfa`した後などに)
 - `gprune [ -r | --remote | -b | --both ] <branch-name>`
 
+## 頻出
+- gws : git status
+- gfa : 全ブランチ取得
+- gco : git checkout
+- gco -b : git branch change
+- gfm : git fetch merge(最新の状態をプル)
+- gpc : 現在のブランチのコミットをプッシュ
+- gbD : ローカルブランチ削除
+- gmF : merge branch --no-ff
+- gc  : git commit
+- gb  : git branch
+- gba : git branch -a
+
+Type `alias` and look other aliases
 
 ## General setup
 ------
