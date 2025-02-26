@@ -45,6 +45,7 @@ nodeやpython等、大体のものはこれをつかって管理する
 - `gprune [ -r | --remote | -b | --both ] <branch-name>`
 
 ## 頻出
+- gl  : git graph
 - gws : git status
 - gfa : 全ブランチ取得
 - gco : git checkout
@@ -53,9 +54,11 @@ nodeやpython等、大体のものはこれをつかって管理する
 - gpc : 現在のブランチのコミットをプッシュ
 - gbD : ローカルブランチ削除
 - gmF : merge branch --no-ff
+- ga  : git add
 - gc  : git commit
 - gb  : git branch
 - gba : git branch -a
+- d ps : docker ps
 
 Type `alias` and look other aliases
 

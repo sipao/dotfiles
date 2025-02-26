@@ -65,4 +65,6 @@ alias dcb="docker-compose build"
 alias dcd="docker-compose down"
 alias dcr="docker-compose restart"
 
+alias cat="bat"
+
 alias k="kubectl"
