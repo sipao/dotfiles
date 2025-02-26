@@ -55,3 +55,7 @@ apply = ['defer']
 [plugins.git-prune]
 github = "diazod/git-prune"
 apply = ['defer']
+
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
+apply = ['defer']
