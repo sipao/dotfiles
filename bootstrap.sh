@@ -66,7 +66,7 @@ if read -qs; then
 fi
 
 ##########################################################
-## starship
+## starship（Brewでいれてるのでコメントアウト
 ##########################################################
 #echo "Install Starship? (y/N): "
 #if read -qs; then
@@ -74,6 +74,8 @@ fi
 #  echo eval "$(starship init zsh)" >> ~/.zshrc
 #  ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 #fi
+
+ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 
 ##########################################################
 ## AstroNvim
