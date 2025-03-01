@@ -1,5 +1,8 @@
 # [WIP]Sipao dotfiles v3
 
+メモ
+skitchとspectacleがbrew経由でいれれない
+
 ## Installation
 1. `./bootstrap.sh`
 2. `.gitconfig`上のnameやemailを変更
